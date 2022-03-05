@@ -3,10 +3,10 @@ import { AiOutlineUsergroupAdd } from 'react-icons/ai';
 import { RiMailSendLine } from 'react-icons/ri';
 import { CreateButton } from './create-button';
 import { MenuCreate } from './menu-create.style';
-
 // import CreateProject from 'src/components/projects/create/create';
 import { MenuItem } from '@mui/material';
 import { useDropdown } from '../../common/dropdown.hook';
+import { ProjectCreate } from './project-create';
 
 export const DashboardCreate: React.FC = () => {
   const { dropdown, openDropdown, closeDropdown } = useDropdown();
@@ -26,7 +26,7 @@ export const DashboardCreate: React.FC = () => {
           horizontal: 'center',
         }}
       >
-        {/* <CreateProject onClick={closeDropdown} /> */}
+        <ProjectCreate onClick={closeDropdown} />
         <MenuItem>
           <AiOutlineUsergroupAdd />
           New Team

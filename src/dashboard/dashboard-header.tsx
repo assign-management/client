@@ -7,13 +7,14 @@ import { DashboardNav } from './dashboard-nav';
 import { DashboardSearch, DashboardSearchProps } from './dashboard-search';
 
 import { DashboardToolbar } from './dashboard-toolbar.styled';
+import { UserOptions } from './user-options';
 
 interface DashboardHeaderProps extends DashboardSearchProps {}
 
 export const DashboardHeader: React.FC<DashboardHeaderProps> = (props) => {
   return (
     <DashboardAppBar position="static" elevation={0} variant="outlined" color="default">
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <DashboardToolbar>
           <Grid container direction="row" wrap="nowrap">
             <DashboardLogo />
@@ -22,7 +23,7 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = (props) => {
           <DashboardNav />
           <Grid container direction="row" justifyContent="flex-end" wrap="nowrap">
             <DashboardCreate />
-            {/* <UserOptions /> */}
+            <UserOptions />
           </Grid>
         </DashboardToolbar>
       </Container>
