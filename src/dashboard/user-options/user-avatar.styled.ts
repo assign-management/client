@@ -1,5 +1,4 @@
-import { Avatar } from '@mui/material';
-import { styled } from '@mui/system';
+import { Avatar, styled } from '@mui/material';
 
 export const UserAvatar = styled(Avatar)`
   color: #626262;

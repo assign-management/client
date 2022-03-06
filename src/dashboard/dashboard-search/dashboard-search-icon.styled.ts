@@ -1,4 +1,4 @@
-import { styled } from '@mui/system';
+import { styled } from '@mui/material';
 import { FiSearch } from 'react-icons/fi';
 
 export const DashboardSearchIcon = styled(FiSearch)`

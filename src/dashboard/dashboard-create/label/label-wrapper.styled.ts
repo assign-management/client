@@ -1,4 +1,4 @@
-import { styled } from '@mui/system';
+import { styled } from '@mui/material';
 
 export const LabelWrapper = styled('label')`
   text-transform: capitalize;

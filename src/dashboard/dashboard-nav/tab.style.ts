@@ -1,5 +1,4 @@
-import { styled } from '@mui/system';
-import { Tab as TabMUI } from '@mui/material';
+import { Tab as TabMUI, styled } from '@mui/material';
 
 export const Tab = styled(TabMUI)`
   && {

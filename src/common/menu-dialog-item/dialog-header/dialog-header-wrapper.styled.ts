@@ -1,5 +1,4 @@
-import { DialogTitle } from '@mui/material';
-import { styled } from '@mui/system';
+import { DialogTitle, styled } from '@mui/material';
 
 export const DialogHeaderWrapper = styled(DialogTitle)`
   display: flex;

@@ -1,4 +1,4 @@
-import { styled } from '@mui/system';
+import { styled } from '@mui/material';
 import { Logo } from '../common/Logo';
 
 export const DashboardLogo = styled(Logo)`

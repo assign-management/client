@@ -1,5 +1,4 @@
-import { IconButton } from '@mui/material';
-import { styled } from '@mui/system';
+import { IconButton, styled } from '@mui/material';
 
 export const CreateButtonWrapper = styled(IconButton)`
   margin: 0 1rem;

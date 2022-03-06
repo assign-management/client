@@ -1,5 +1,4 @@
-import { Tabs as MUITabs } from '@mui/material';
-import { styled } from '@mui/system';
+import { Tabs as MUITabs, styled } from '@mui/material';
 
 export const Tabs = styled(MUITabs)`
   && {

@@ -1,5 +1,4 @@
-import { Dialog } from '@mui/material';
-import { styled } from '@mui/system';
+import { Dialog, styled } from '@mui/material';
 
 export const MenuDialog = styled(Dialog)`
   .MuiDialog-paperWidthSm {

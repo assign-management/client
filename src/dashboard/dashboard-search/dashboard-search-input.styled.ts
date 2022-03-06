@@ -1,5 +1,4 @@
-import { InputBase } from '@mui/material';
-import { styled } from '@mui/system';
+import { InputBase, styled } from '@mui/material';
 
 export const DashboardSearchInput = styled(InputBase)`
   input {

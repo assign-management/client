@@ -1,5 +1,4 @@
-import { AppBar } from '@mui/material';
-import { styled } from '@mui/system';
+import { AppBar, styled } from '@mui/material';
 
 export const DashboardAppBar = styled(AppBar)`
   color: #626262;

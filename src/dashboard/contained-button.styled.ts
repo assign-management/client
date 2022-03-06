@@ -1,5 +1,4 @@
-import { Button } from '@mui/material';
-import { styled } from '@mui/system';
+import { Button, styled } from '@mui/material';
 import { css } from '@emotion/react';
 
 export const ContainedButton = styled(Button)`

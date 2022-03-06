@@ -1,6 +1,5 @@
-import { Menu } from '@mui/material';
+import { Menu, styled } from '@mui/material';
 import { grey } from '@mui/material/colors';
-import { styled } from '@mui/system';
 
 export const UserOptionsMenu = styled(Menu)`
   & .MuiPaper-root.MuiPopover-paper.MuiPopover-paper {
