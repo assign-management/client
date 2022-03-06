@@ -14,7 +14,7 @@ interface DashboardHeaderProps extends DashboardSearchProps {}
 export const DashboardHeader: React.FC<DashboardHeaderProps> = (props) => {
   return (
     <DashboardAppBar position="static" elevation={0} variant="outlined" color="default">
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <DashboardToolbar>
           <Grid container direction="row" wrap="nowrap">
             <DashboardLogo />

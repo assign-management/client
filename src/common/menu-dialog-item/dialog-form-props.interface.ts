@@ -1,3 +1,3 @@
 export interface DialogFormPropsProps {
-  onSubmit: () => void;
+  handleClose: () => void;
 }

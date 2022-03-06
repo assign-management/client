@@ -3,7 +3,7 @@ import { AppProps } from 'next/app';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider, EmotionCache, Global } from '@emotion/react';
-import {theme} from '../styles/theme';
+import { theme } from '../styles/theme';
 import createEmotionCache from '../src/create-emotion-cache';
 import { useApollo } from '../src/apollo-client';
 import { ApolloProvider } from '@apollo/client';
@@ -16,10 +16,13 @@ interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
 }
 
+/**
+ * @link CssBaseLine https://mui.com/components/css-baseline/#main-content
+ */
 export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
-  const apolloClient = useApollo(pageProps)
+  const apolloClient = useApollo(pageProps);
 
   return (
     <CacheProvider value={emotionCache}>
@@ -28,11 +31,11 @@ export default function MyApp(props: MyAppProps) {
       </Head>
       <Global styles={global} />
       <ThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+        {/*CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-      <ApolloProvider client={apolloClient}>
-        <Component {...pageProps} />
-      </ApolloProvider>
+        <ApolloProvider client={apolloClient}>
+          <Component {...pageProps} />
+        </ApolloProvider>
       </ThemeProvider>
     </CacheProvider>
   );

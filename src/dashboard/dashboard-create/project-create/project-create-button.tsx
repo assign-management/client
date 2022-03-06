@@ -1,9 +1,7 @@
 import React from 'react';
 import { BiLayerPlus } from 'react-icons/bi';
 
-interface ProjectCreateButtonProps {}
-
-export const ProjectCreateButton: React.FC<ProjectCreateButtonProps> = () => {
+export const ProjectCreateButton: React.FC = () => {
   return (
     <>
       <BiLayerPlus /> New Project
