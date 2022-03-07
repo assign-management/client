@@ -21,6 +21,11 @@ export enum MutationStatus {
   SUCCESS = "SUCCESS",
 }
 
+export interface PaginationArgs {
+  limit: number;
+  offset: number;
+}
+
 //==============================================================
 // END Enums and Input Objects
 //==============================================================

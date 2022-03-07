@@ -7,7 +7,7 @@ import Document, {
   DocumentInitialProps,
 } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
-import {theme} from '../styles/theme';
+import { theme } from '../styles';
 import createEmotionCache from '../src/create-emotion-cache';
 import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 

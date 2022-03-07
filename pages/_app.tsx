@@ -3,11 +3,10 @@ import { AppProps } from 'next/app';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider, EmotionCache, Global } from '@emotion/react';
-import { theme } from '../styles/theme';
+import { theme, global } from '../styles';
 import createEmotionCache from '../src/create-emotion-cache';
 import { useApollo } from '../src/apollo-client';
 import { ApolloProvider } from '@apollo/client';
-import { global } from '../styles/globals';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();

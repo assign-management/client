@@ -1,11 +1,12 @@
 import { createTheme } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
+import { FONT_SIZE } from './theme.const';
 
 export const theme = createTheme({
   typography: {
     fontFamily: ['Lato', 'sans-serif'].join(','),
     htmlFontSize: 10,
-    fontSize: 16,
+    fontSize: FONT_SIZE,
     h4: {
       fontSize: '5rem',
       letterSpacing: '.1rem',
