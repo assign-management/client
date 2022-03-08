@@ -24,16 +24,16 @@ type UseDialog = (
 export const useDialog: UseDialog = (initialState, lifeCycleOnOpen) => {
   const [open, setOpen] = React.useState(initialState);
 
-  const handleOpen = () => {
+  const openDialog = () => {
     setOpen(true);
     lifeCycleOnOpen();
   };
 
-  const handleClose = () => {
+  const closeDialog = () => {
     setOpen(false);
   };
 
-  const handleTabPropagation: React.KeyboardEventHandler<HTMLDivElement> = event => {
+  const handleTabPropagation: React.KeyboardEventHandler<HTMLDivElement> = (event) => {
     if (event.key === 'Tab') {
       event.stopPropagation();
     }
@@ -41,8 +41,8 @@ export const useDialog: UseDialog = (initialState, lifeCycleOnOpen) => {
 
   return {
     open,
-    handleOpen,
-    handleClose,
-    handleTabPropagation
+    handleOpen: openDialog,
+    handleClose: closeDialog,
+    handleTabPropagation,
   };
 };

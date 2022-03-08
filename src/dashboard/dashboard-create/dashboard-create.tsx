@@ -26,7 +26,7 @@ export const DashboardCreate: React.FC = () => {
           horizontal: 'center',
         }}
       >
-        <ProjectCreate onClick={closeDropdown} />
+        <ProjectCreate closeDropdown={closeDropdown} />
         <MenuItem>
           <AiOutlineUsergroupAdd />
           New Team

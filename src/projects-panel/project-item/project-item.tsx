@@ -1,12 +1,9 @@
 import { CardActionArea, CardHeader } from '@mui/material';
 import Link from 'next/link';
 import React from 'react';
-import { FetchProjects_fetchProjects_projects } from '../projects-list/__generated__/FetchProjects';
+import { ProjectItemMenu } from '../project-item-menu';
+import { ProjectItemProps } from './project-item-props.interface';
 import { ProjectItemWrapper } from './project-item-wrapper.styled';
-
-interface ProjectItemProps {
-  project: FetchProjects_fetchProjects_projects;
-}
 
 export const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
   return (
@@ -16,6 +13,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
           <CardHeader title={project.title} subheader={project.accessibility.toLocaleLowerCase()} />
         </CardActionArea>
       </Link>
+      <ProjectItemMenu project={project} />
     </ProjectItemWrapper>
   );
 };

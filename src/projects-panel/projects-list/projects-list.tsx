@@ -8,7 +8,7 @@ import { ProjectsListWrapper } from './projects-list-wrapper.styled';
 interface ProjectsListProps {}
 
 export const ProjectsList: React.FC<ProjectsListProps> = () => {
-  const { data, loading, error } = useFetchProjects();
+  const { projects, loading, error } = useFetchProjects(0, 200);
 
   // TODO: add error svg and on error and when no projects were found
   if (error) return <span>Error: {error.message}</span>;
@@ -19,9 +19,7 @@ export const ProjectsList: React.FC<ProjectsListProps> = () => {
         {loading ? (
           <ProjectListSkeleton />
         ) : (
-          data?.fetchProjects?.projects.map((project) => (
-            <ProjectItem key={project.id} project={project} />
-          ))
+          projects?.map((project) => <ProjectItem key={project.id} project={project} />)
         )}
       </ProjectsListWrapper>
     </ProjectsListContainer>

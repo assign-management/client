@@ -7,7 +7,7 @@ import { DialogActions, FormControl, FormHelperText, MenuItem, Select } from '@m
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import { Accessibility } from '../../../../__generated__/globalTypes';
-import { DialogFormPropsProps } from '../../../common/menu-dialog-item';
+import { DialogFormProps } from '../../../common/menu-dialog-item';
 import { CreateProjectVariables } from './__generated__/CreateProject';
 import { useCreateProject } from './create-project.hook';
 import { TextButton } from '../buttons/text-button';
@@ -18,14 +18,14 @@ import { projectCreateDefaultValues } from './project-create-defualt-values';
 import { projectCreateSchema } from './project-create-schema';
 import { getErrorProps } from '../../../common/react-hook-form/get-error-props';
 
-interface ProjectCreateFormProps extends DialogFormPropsProps {}
+interface ProjectCreateFormProps extends DialogFormProps {}
 
-export const ProjectCreateForm: React.FC<ProjectCreateFormProps> = ({ handleClose }) => {
+export const ProjectCreateForm: React.FC<ProjectCreateFormProps> = ({ handleDialogClose }) => {
   const [mutate, { loading, error }] = useCreateProject();
 
   const handleFormSubmit: SubmitHandler<CreateProjectVariables> = async (variables) => {
     await mutate({ variables });
-    handleClose();
+    handleDialogClose();
   };
 
   const { control, handleSubmit, watch } = useForm<CreateProjectVariables>({
@@ -84,7 +84,7 @@ export const ProjectCreateForm: React.FC<ProjectCreateFormProps> = ({ handleClos
       />
 
       <DialogActions>
-        <TextButton onClick={handleClose}>cancel</TextButton>
+        <TextButton onClick={handleDialogClose}>cancel</TextButton>
         <SubmitButton inProgress={loading} text="create" />
       </DialogActions>
     </form>

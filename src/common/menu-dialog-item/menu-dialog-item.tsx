@@ -1,24 +1,25 @@
 import { DialogContent, MenuItem } from '@mui/material';
 import React from 'react';
-import { DialogFormPropsProps } from './dialog-form-props.interface';
+import { DialogFormProps, DialogFormPropsWithInitialData } from './dialog-form-props.interface';
 import { DialogHeader } from './dialog-header/dialog-header';
 import { useDialog } from './dialog.hook';
 import { MenuDialog } from './menu-dialog.styled';
 
 interface MenuDialogItemProps {
-  content: React.ReactNode;
-  onClick: () => void;
-  form: React.ComponentType<DialogFormPropsProps>;
+  closeDropdown: () => void;
+  form: React.ComponentType<any>;
   title: string;
+  formAdditionalProps?: unknown;
 }
 
 export const MenuDialogItem: React.FC<MenuDialogItemProps> = ({
   children,
-  onClick,
+  closeDropdown,
   form: Form,
   title,
+  formAdditionalProps,
 }) => {
-  const { open, handleOpen, handleClose, handleTabPropagation } = useDialog(false, onClick);
+  const { open, handleOpen, handleClose, handleTabPropagation } = useDialog(false, closeDropdown);
   return (
     <>
       <MenuItem onClick={handleOpen}>{children}</MenuItem>
@@ -26,7 +27,7 @@ export const MenuDialogItem: React.FC<MenuDialogItemProps> = ({
       <MenuDialog onClose={handleClose} open={open} onKeyDown={handleTabPropagation}>
         <DialogHeader handleClose={handleClose} title={title} />
         <DialogContent>
-          <Form handleClose={handleClose} />
+          <Form handleDialogClose={handleClose} {...formAdditionalProps} />
         </DialogContent>
       </MenuDialog>
     </>
