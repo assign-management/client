@@ -7,8 +7,8 @@ type UseDialog = (
   lifeCycleOnOpen: CallbackFunction
 ) => {
   open: boolean;
-  handleOpen: CallbackFunction;
-  handleClose: CallbackFunction;
+  openDialog: CallbackFunction;
+  closeDialog: CallbackFunction;
   handleTabPropagation: React.KeyboardEventHandler<HTMLDivElement>;
 };
 
@@ -41,8 +41,8 @@ export const useDialog: UseDialog = (initialState, lifeCycleOnOpen) => {
 
   return {
     open,
-    handleOpen: openDialog,
-    handleClose: closeDialog,
+    openDialog,
+    closeDialog,
     handleTabPropagation,
   };
 };

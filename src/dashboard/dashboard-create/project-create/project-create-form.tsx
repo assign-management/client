@@ -1,31 +1,29 @@
 import React from 'react';
 import { useForm, Controller, SubmitHandler } from 'react-hook-form';
-
 import { TiTag } from 'react-icons/ti';
 import { DialogActions, FormControl, FormHelperText, MenuItem, Select } from '@mui/material';
-
 import { yupResolver } from '@hookform/resolvers/yup';
-
 import { Accessibility } from '../../../../__generated__/globalTypes';
-import { DialogFormProps } from '../../../common/menu-dialog-item';
 import { CreateProjectVariables } from './__generated__/CreateProject';
 import { useCreateProject } from './create-project.hook';
 import { TextButton } from '../buttons/text-button';
-import { SubmitButton } from '../../submit-button';
+import { SubmitButton } from '../../../common/buttons';
 import { TextField } from '../text-field.styled';
 import { Label } from '../label';
 import { projectCreateDefaultValues } from './project-create-defualt-values';
 import { projectCreateSchema } from './project-create-schema';
 import { getErrorProps } from '../../../common/react-hook-form/get-error-props';
 
-interface ProjectCreateFormProps extends DialogFormProps {}
+interface ProjectCreateFormProps {
+  closeDialog: () => void;
+}
 
-export const ProjectCreateForm: React.FC<ProjectCreateFormProps> = ({ handleDialogClose }) => {
+export const ProjectCreateForm: React.FC<ProjectCreateFormProps> = ({ closeDialog }) => {
   const [mutate, { loading, error }] = useCreateProject();
 
   const handleFormSubmit: SubmitHandler<CreateProjectVariables> = async (variables) => {
     await mutate({ variables });
-    handleDialogClose();
+    closeDialog();
   };
 
   const { control, handleSubmit, watch } = useForm<CreateProjectVariables>({
@@ -84,7 +82,7 @@ export const ProjectCreateForm: React.FC<ProjectCreateFormProps> = ({ handleDial
       />
 
       <DialogActions>
-        <TextButton onClick={handleDialogClose}>cancel</TextButton>
+        <TextButton onClick={closeDialog}>cancel</TextButton>
         <SubmitButton inProgress={loading} text="create" />
       </DialogActions>
     </form>

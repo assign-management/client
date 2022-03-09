@@ -1,4 +1,4 @@
-import { css } from '@emotion/react';
+import { css } from '@mui/material';
 
 export const global = css`
   html {

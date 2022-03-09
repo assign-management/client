@@ -1,5 +1,4 @@
-import { Button, styled } from '@mui/material';
-import { css } from '@emotion/react';
+import { Button, styled, css } from '@mui/material';
 
 export const ContainedButton = styled(Button)`
   ${({ theme }) => css`
@@ -23,7 +22,7 @@ export const ContainedButton = styled(Button)`
     color: #fff;
 
     &:hover {
-      box-shadow: ${(theme.shadows as number[])[5]};
+      box-shadow: ${theme.shadows[5]};
       background: #0073b1;
     }
 

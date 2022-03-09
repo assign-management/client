@@ -6,6 +6,7 @@ import { ListItemIcon, Menu } from '@mui/material';
 import { ProjectItemProps } from '../project-item';
 import { MenuDialogItem } from '../../common/menu-dialog-item';
 import { ProjectDeleteForm } from './project-delete-form';
+import { ProjectDelete } from './project-delete';
 
 interface ProjectItemMenuProps extends ProjectItemProps {}
 
@@ -28,17 +29,7 @@ export const ProjectItemMenu: React.FC<ProjectItemMenuProps> = ({ project }) => 
           horizontal: 'center',
         }}
       >
-        <MenuDialogItem
-          title="Are you absolutely sure?"
-          closeDropdown={closeDropdown}
-          form={ProjectDeleteForm}
-          formAdditionalProps={{ project }}
-        >
-          <ListItemIcon>
-            <GoX />
-          </ListItemIcon>
-          Delete
-        </MenuDialogItem>
+        <ProjectDelete closeDropdown={closeDropdown} project={project} />
       </Menu>
     </Fragment>
   );
