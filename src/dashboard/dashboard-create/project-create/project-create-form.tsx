@@ -19,10 +19,10 @@ interface ProjectCreateFormProps {
 }
 
 export const ProjectCreateForm: React.FC<ProjectCreateFormProps> = ({ closeDialog }) => {
-  const [mutate, { loading, error }] = useCreateProject();
+  const [createProject, { loading, error, data }] = useCreateProject(projectCreateDefaultValues);
 
   const handleFormSubmit: SubmitHandler<CreateProjectVariables> = async (variables) => {
-    await mutate({ variables });
+    await createProject({ variables });
     closeDialog();
   };
 

@@ -1,13 +1,11 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { ProjectItemProps } from '../project-item';
-import { FetchProjects_fetchProjects_projects } from '../projects-list/__generated__/FetchProjects';
+import { FetchProjects_fetchProjects_projects } from '../../projects-list/__generated__/FetchProjects';
 import { useDeleteProject } from './delete-project.hook';
 import { ProjectDeleteFormButton } from './project-delete-form-button.styled';
 import { ProjectDeleteFormInput } from './project-delete-form-input.styled';
 import { ProjectDeleteFormLabel } from './project-delete-form-label.styled';
 import { ProjectDeleteFormWrapper } from './project-delete-form-wrapper.styled';
-import { DeleteProjectVariables } from './__generated__/DeleteProject';
 
 interface ProjectDeleteFormArgs {
   title: string;
@@ -22,7 +20,7 @@ export const ProjectDeleteForm: React.FC<ProjectDeleteFormProps> = ({
   project: { id, title },
   closeDialog,
 }) => {
-  const { deleteProject, loading } = useDeleteProject();
+  const { deleteProject, loading } = useDeleteProject(id);
   const {
     register,
     handleSubmit,
@@ -32,10 +30,8 @@ export const ProjectDeleteForm: React.FC<ProjectDeleteFormProps> = ({
     mode: 'all',
   });
 
-  console.log('closeDialog', closeDialog);
-
   const onSubmit = async () => {
-    await deleteProject({ variables: { id } });
+    await deleteProject();
     closeDialog();
   };
   const isDisabled = Boolean(errors.title) || !isDirty;

@@ -6,7 +6,7 @@ export const useFetchProjects = (offset: number, limit: number) => {
   const { loading, error, data, networkStatus } = useQuery<FetchProjects>(FETCH_PROJECTS, {
     variables: { args: { offset, limit } },
     notifyOnNetworkStatusChange: true,
-    pollInterval: 2000,
+    // pollInterval: 2000,
   });
 
   const isLoading = networkStatus === NetworkStatus.loading;

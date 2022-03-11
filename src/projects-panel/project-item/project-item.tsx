@@ -1,7 +1,7 @@
 import { CardActionArea, CardHeader } from '@mui/material';
 import Link from 'next/link';
 import React from 'react';
-import { ProjectItemMenu } from '../project-item-menu';
+import { ProjectItemMenu } from '../project-menu';
 import { ProjectItemProps } from './project-item-props.interface';
 import { ProjectItemWrapper } from './project-item-wrapper.styled';
 

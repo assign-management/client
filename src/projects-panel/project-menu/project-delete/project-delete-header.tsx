@@ -1,4 +1,5 @@
 import React from 'react';
+import { GoX } from 'react-icons/go';
 import { ProjectDeleteHeaderButton } from './project-delete-header-button.styled';
 import { ProjectDeleteHeaderTitle } from './project-delete-header-title.styled';
 import { ProjectDeleteHeaderWrapper } from './project-delete-header-wrapper.styled';
@@ -11,7 +12,9 @@ export const ProjectDeleteHeader: React.FC<ProjectDeleteHeaderProps> = ({ closeD
   return (
     <ProjectDeleteHeaderWrapper>
       <ProjectDeleteHeaderTitle>Are you absolutely sure?</ProjectDeleteHeaderTitle>
-      <ProjectDeleteHeaderButton size="small" onClick={closeDialog}></ProjectDeleteHeaderButton>
+      <ProjectDeleteHeaderButton onClick={closeDialog}>
+        <GoX />
+      </ProjectDeleteHeaderButton>
     </ProjectDeleteHeaderWrapper>
   );
 };

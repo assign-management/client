@@ -1,5 +1,5 @@
 import { styled, css } from '@mui/material';
-import { SubmitButton } from '../../common/buttons';
+import { SubmitButton } from '../../../common/buttons';
 
 export const ProjectDeleteFormButton = styled(SubmitButton)`
   ${({ theme }) => css`
