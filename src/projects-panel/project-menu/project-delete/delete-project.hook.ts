@@ -6,9 +6,15 @@ export const useDeleteProject = (id: string) => {
     fetchPolicy: 'no-cache',
     variables: { id },
     update(cache) {
-      const normalizedId = cache.identify({ id, __typename: 'Project' });
-      cache.evict({ id: normalizedId });
-      cache.gc();
+      /**
+       * ApolloLink does not stop on unmounting a React Component or unsubscribing to a "watchQuery" subscription.
+       * @link https://github.com/apollographql/apollo-client/issues/7101
+       */
+      setTimeout(() => {
+        const normalizedId = cache.identify({ id, __typename: 'Project' });
+        cache.evict({ id: normalizedId });
+        cache.gc();
+      });
     },
   });
 
