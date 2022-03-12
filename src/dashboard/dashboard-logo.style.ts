@@ -1,5 +1,5 @@
 import { styled } from '@mui/material';
-import { Logo } from '../common/Logo';
+import { Logo } from '../common/logo';
 
 export const DashboardLogo = styled(Logo)`
   color: inherit;

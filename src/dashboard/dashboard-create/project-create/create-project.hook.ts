@@ -7,4 +7,9 @@ export const useCreateProject = (variables: CreateProjectVariables) =>
   useMutation<CreateProjectVariables>(CREATE_PROJECT, {
     variables,
     refetchQueries: [FETCH_PROJECTS],
+    onError(err) {
+      console.log(JSON.stringify(err, null, 2));
+      const { message } = err;
+      console.log('message', message);
+    },
   });

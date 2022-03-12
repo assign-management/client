@@ -1,7 +1,7 @@
 import React from 'react';
-import { LogoIcon } from './LogoIcon.styled';
-import { LogoText } from './LogoText.styled';
-import { LogoWrapper } from './LogoWrapper.styled';
+import { LogoIcon } from './logo-icon.styled';
+import { LogoText } from './logo-text.styled';
+import { LogoWrapper } from './logo-wrapper.styled';
 
 interface LogoProps {
   className?: string;
