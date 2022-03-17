@@ -6,6 +6,7 @@ export const LogoWrapper = styled('a')`
   font-size: 4rem;
   color: #fff;
   transition: all 0.5s;
+  text-decoration: none;
   &:hover {
     opacity: 0.8;
   }

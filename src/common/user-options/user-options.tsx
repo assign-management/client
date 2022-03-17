@@ -1,7 +1,7 @@
 import { ListItemIcon, MenuItem } from '@mui/material';
 import React, { Fragment } from 'react';
 import { FiLogOut } from 'react-icons/fi';
-import { useDropdown } from '../../common/dropdown.hook';
+import { useDropdown } from '../dropdown.hook';
 import { formatUserInfo } from './format-user-info.util';
 import { useProfile } from './profile.hook';
 import { UserOptionsButton } from './user-options-button';

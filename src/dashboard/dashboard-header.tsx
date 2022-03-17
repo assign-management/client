@@ -7,7 +7,7 @@ import { DashboardNav } from './dashboard-nav';
 import { DashboardSearch, DashboardSearchProps } from './dashboard-search';
 
 import { DashboardToolbar } from './dashboard-toolbar.styled';
-import { UserOptions } from './user-options';
+import { UserOptions } from '../common/user-options';
 
 interface DashboardHeaderProps extends DashboardSearchProps {}
 
