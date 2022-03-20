@@ -3,6 +3,7 @@ import { SEO } from '../common/seo';
 import { BoardBackground } from './board-background';
 import { BoardContent } from './board-content.styled';
 import { BoardHeader } from './board-header';
+import { BoardSections } from './board-sections';
 import { BoardWrapper } from './board-wrapper.styled';
 
 interface BoardProps {
@@ -18,7 +19,9 @@ export const Board: React.FC<BoardProps> = (props) => {
       />
       <BoardWrapper>
         <BoardHeader {...props} />
-        <BoardContent></BoardContent>
+        <BoardContent>
+          <BoardSections {...props} />
+        </BoardContent>
       </BoardWrapper>
     </BoardBackground>
   );

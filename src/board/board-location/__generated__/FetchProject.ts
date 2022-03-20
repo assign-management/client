@@ -28,5 +28,5 @@ export interface FetchProject {
 }
 
 export interface FetchProjectVariables {
-  fetchProjectId: string;
+  id: string;
 }

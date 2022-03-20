@@ -4,6 +4,7 @@ import React from 'react';
 import { useFetchProjects } from '../../projects-panel/projects-list/fetch-projects.hook';
 import { BoardLocationMenuItem } from './board-location-menu-item.styled';
 import { BoardLocationMenuProgress } from './board-location-menu-progress.styled';
+import { BoardLocationMenuSearch } from './board-location-menu-search.styled';
 import { BoardLocationMenuWrapper } from './board-location-menu-wrapper.styled';
 
 interface BoardLocationMenuProps {
@@ -32,6 +33,8 @@ export const BoardLocationMenu: React.FC<BoardLocationMenuProps> = ({
         horizontal: 'right',
       }}
     >
+      <BoardLocationMenuSearch />
+
       {loading ? (
         <BoardLocationMenuProgress />
       ) : (
