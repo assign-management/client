@@ -24,8 +24,9 @@ const useWindowSize = () => {
 };
 
 export const ProjectListSkeleton: React.FC = () => {
+  const INITIAL_HEIGHT = 1;
   const { height } = useWindowSize();
-  const skeletonNum = Math.floor(height / PROJECT_ITEM_TOTAL_HEIGHT);
+  const skeletonNum = Math.ceil(height / PROJECT_ITEM_TOTAL_HEIGHT) + INITIAL_HEIGHT;
 
   return (
     <>

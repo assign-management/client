@@ -24,22 +24,23 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (networkError) console.log(`[Network error]: ${networkError}`);
 });
 
-function createApolloClient() {
-  return new ApolloClient({
+/**
+ * @link https://www.apollographql.com/docs/react/caching/cache-configuration
+ */
+const cache = new InMemoryCache({
+  typePolicies: {
+    Section: {
+      keyFields: ['id', 'projectId'],
+    },
+  },
+});
+
+const createApolloClient = () =>
+  new ApolloClient({
     ssrMode: typeof window === 'undefined',
     link: from([errorLink, httpLink]),
-
-    cache: new InMemoryCache({
-      typePolicies: {
-        Query: {
-          fields: {
-            allPosts: concatPagination(),
-          },
-        },
-      },
-    }),
+    cache,
   });
-}
 
 export function initializeApollo(initialState = null) {
   const _apolloClient = apolloClient ?? createApolloClient();

@@ -22,8 +22,13 @@ export enum MutationStatus {
 }
 
 export interface PaginationArgs {
-  limit: number;
-  offset: number;
+  offset?: number | null;
+  limit?: number | null;
+}
+
+export interface UpdateSectionArgs {
+  title?: string | null;
+  projectId?: string | null;
 }
 
 //==============================================================
