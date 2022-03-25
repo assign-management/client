@@ -4,14 +4,11 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL fragment: SectionFields
+// GraphQL fragment: ProjectFieldsT
 // ====================================================
 
-export interface SectionFields {
-  __typename: "Section";
-  id: string;
-  projectId: string;
+export interface ProjectFieldsT {
+  __typename: "Project";
   title: string;
   createdAt: any;
-  updatedAt: any;
 }

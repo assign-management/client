@@ -2,7 +2,6 @@ import { Grid, Toolbar } from '@mui/material';
 import React from 'react';
 import { UserOptions } from '../../common/user-options';
 import { BoardLocation } from '../board-location';
-import { useFetchProject } from '../board-location/fetch-project.hook';
 import { BoardLogo } from '../board-logo';
 import { BoardHeaderAppBar } from './board-header-app-bar.styled';
 import { BoardHeaderRow } from './board-header-row.styled';
@@ -12,7 +11,6 @@ interface BoardHeaderProps {
 }
 
 export const BoardHeader: React.FC<BoardHeaderProps> = ({ projectId }) => {
-  const { project, loading } = useFetchProject(projectId);
   return (
     <BoardHeaderAppBar>
       <Grid component={Toolbar} container direction="column">

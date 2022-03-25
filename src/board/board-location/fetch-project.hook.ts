@@ -1,4 +1,6 @@
-import { useQuery } from '@apollo/client';
+import { gql, useApolloClient, useQuery } from '@apollo/client';
+import { PROJECT_FIELDS } from '../../common/fragments/project-fields.gql';
+import { FETCH_PROJECTS } from '../../projects-panel/projects-list/fetch-projects.gql';
 import { FETCH_PROJECT } from './fetch-project.gql';
 import { FetchProject } from './__generated__/FetchProject';
 

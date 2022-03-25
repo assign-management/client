@@ -11,13 +11,13 @@ import { Accessibility } from "./../../../../__generated__/globalTypes";
 
 export interface FetchProject_fetchProject {
   __typename: "Project";
-  title: string;
   /**
    * support markdown language
    * Description for field
    * Supports **multi-line** description for your [API](http: // example.com)!
    */
   id: string;
+  title: string;
   accessibility: Accessibility;
   createdAt: any;
   updatedAt: any;

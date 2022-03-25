@@ -10,7 +10,8 @@
 export interface FetchSections_fetchSections_sections {
   __typename: "Section";
   id: string;
-  title: string | null;
+  projectId: string;
+  title: string;
   createdAt: any;
   updatedAt: any;
 }

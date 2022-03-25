@@ -12,7 +12,8 @@ import { UpdateSectionArgs, MutationStatus } from "./../../../../../__generated_
 export interface UpdateSection_updateSection_section {
   __typename: "Section";
   id: string;
-  title: string | null;
+  projectId: string;
+  title: string;
   createdAt: any;
   updatedAt: any;
 }
