@@ -10,7 +10,6 @@ interface BoardSectionsProps {
 
 export const BoardSections: React.FC<BoardSectionsProps> = ({ projectId }) => {
   const { sections, loading } = useFetchSections(projectId);
-  console.log('sections', sections);
 
   return (
     <BoardSectionsWrapper>

@@ -18,7 +18,6 @@ interface BoardLocationProps {
 export const BoardLocation: React.FC<BoardLocationProps> = ({ projectId }) => {
   const { dropdown, openDropdown, closeDropdown } = useDropdown();
   const { project, loading } = useFetchProject(projectId);
-  console.log(project?.title);
 
   return (
     <>
