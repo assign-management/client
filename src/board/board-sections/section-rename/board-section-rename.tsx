@@ -42,9 +42,9 @@ export const SectionRename: React.FC<SectionRenameProps> = ({ handleHide, sectio
       <BoardSectionTitleField
         {...register(titleKey)}
         autoFocus
-        onBlur={handleTitleFieldBlur}
+        onBlur={handleSubmit(handleTitleFieldBlur)}
         error={isError}
-        helperText={errors[titleKey]?.message}
+        helperText={errors[titleKey]?.message ?? ' '}
       />
     </form>
   );

@@ -4,10 +4,10 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL fragment: SectionFields
+// GraphQL fragment: TaskFields
 // ====================================================
 
-export interface SectionFields_tasks {
+export interface TaskFields {
   __typename: "Task";
   id: string;
   title: string;
@@ -15,16 +15,6 @@ export interface SectionFields_tasks {
   dueDate: any | null;
   description: string | null;
   sectionId: string;
-  createdAt: any;
-  updatedAt: any;
-}
-
-export interface SectionFields {
-  __typename: "Section";
-  id: string;
-  projectId: string;
-  title: string;
-  tasks: SectionFields_tasks[] | null;
   createdAt: any;
   updatedAt: any;
 }

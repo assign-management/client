@@ -21,6 +21,16 @@ export enum MutationStatus {
   SUCCESS = "SUCCESS",
 }
 
+export interface CreateSectionData {
+  title: string;
+  projectId: string;
+}
+
+export interface CreateTaskData {
+  title: string;
+  sectionId: string;
+}
+
 export interface PaginationArgs {
   offset?: number | null;
   limit?: number | null;

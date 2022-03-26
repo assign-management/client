@@ -7,11 +7,24 @@
 // GraphQL query operation: FetchSections
 // ====================================================
 
+export interface FetchSections_fetchSections_sections_tasks {
+  __typename: "Task";
+  id: string;
+  title: string;
+  order: number | null;
+  dueDate: any | null;
+  description: string | null;
+  sectionId: string;
+  createdAt: any;
+  updatedAt: any;
+}
+
 export interface FetchSections_fetchSections_sections {
   __typename: "Section";
   id: string;
   projectId: string;
   title: string;
+  tasks: FetchSections_fetchSections_sections_tasks[] | null;
   createdAt: any;
   updatedAt: any;
 }

@@ -3,13 +3,13 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { UpdateSectionData, MutationStatus } from "./../../../../../__generated__/globalTypes";
+import { CreateSectionData, MutationStatus } from "./../../../../../__generated__/globalTypes";
 
 // ====================================================
-// GraphQL mutation operation: UpdateSection
+// GraphQL mutation operation: CreateSection
 // ====================================================
 
-export interface UpdateSection_updateSection_section_tasks {
+export interface CreateSection_createSection_section_tasks {
   __typename: "Task";
   id: string;
   title: string;
@@ -21,27 +21,26 @@ export interface UpdateSection_updateSection_section_tasks {
   updatedAt: any;
 }
 
-export interface UpdateSection_updateSection_section {
+export interface CreateSection_createSection_section {
   __typename: "Section";
   id: string;
   projectId: string;
   title: string;
-  tasks: UpdateSection_updateSection_section_tasks[] | null;
+  tasks: CreateSection_createSection_section_tasks[] | null;
   createdAt: any;
   updatedAt: any;
 }
 
-export interface UpdateSection_updateSection {
+export interface CreateSection_createSection {
   __typename: "SectionMutationResponse";
   status: MutationStatus;
-  section: UpdateSection_updateSection_section | null;
+  section: CreateSection_createSection_section | null;
 }
 
-export interface UpdateSection {
-  updateSection: UpdateSection_updateSection | null;
+export interface CreateSection {
+  createSection: CreateSection_createSection | null;
 }
 
-export interface UpdateSectionVariables {
-  id: string;
-  data: UpdateSectionData;
+export interface CreateSectionVariables {
+  data: CreateSectionData;
 }

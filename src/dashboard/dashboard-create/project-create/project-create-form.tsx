@@ -9,7 +9,7 @@ import { useCreateProject } from './create-project.hook';
 import { TextButton } from '../buttons/text-button';
 import { SubmitButton } from '../../../common/buttons';
 import { TextField } from '../text-field.styled';
-import { Label } from '../label';
+import { Label } from '../../../common/label';
 import { projectCreateDefaultValues } from './project-create-defualt-values';
 import { projectCreateSchema } from './project-create-schema';
 import { getErrorProps } from '../../../common/react-hook-form/get-error-props';
