@@ -31,7 +31,7 @@ export const SectionRename: React.FC<SectionRenameProps> = ({ handleHide, sectio
   const isError = !isValid;
 
   const handleFormSubmit: SubmitHandler<SectionRenameArgs> = async ({ title }) => {
-    await updateSection({ variables: { id: section.id, args: { title } } });
+    await updateSection({ variables: { id: section.id, data: { title } } });
     handleHide();
   };
   const title = watch(titleKey);

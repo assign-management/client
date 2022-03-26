@@ -26,9 +26,8 @@ export interface PaginationArgs {
   limit?: number | null;
 }
 
-export interface UpdateSectionArgs {
+export interface UpdateSectionData {
   title?: string | null;
-  projectId?: string | null;
 }
 
 //==============================================================

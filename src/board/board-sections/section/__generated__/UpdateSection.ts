@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { UpdateSectionArgs, MutationStatus } from "./../../../../../__generated__/globalTypes";
+import { UpdateSectionData, MutationStatus } from "./../../../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL mutation operation: UpdateSection
@@ -30,5 +30,5 @@ export interface UpdateSection {
 
 export interface UpdateSectionVariables {
   id: string;
-  args?: UpdateSectionArgs | null;
+  data: UpdateSectionData;
 }
