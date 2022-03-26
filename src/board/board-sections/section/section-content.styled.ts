@@ -1,4 +1,5 @@
 import { styled } from '@mui/material';
+import { SECTION_PADDING } from './section.const';
 
 export const SectionContent = styled('div')`
   display: flex;
@@ -6,7 +7,7 @@ export const SectionContent = styled('div')`
   overflow-y: auto;
   overflow-x: hidden;
   margin-right: 0.4rem;
-  padding: 1rem;
+  padding: ${SECTION_PADDING}rem;
 
   scrollbar-width: 0.8rem;
   scrollbar-color: #bfc3cd rgba(9, 30, 66, 0.08);

@@ -3,7 +3,7 @@ import { BoardSectionsSkeleton } from './board-sections-skeleton';
 import { BoardSectionsWrapper } from './board-sections-wrapper.styled';
 import { useFetchSections } from './fetch-sections.hook';
 import { SectionCreate } from './section-create';
-import { Section } from './section/section';
+import { Section } from './section';
 
 interface BoardSectionsProps {
   projectId: string;
