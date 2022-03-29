@@ -3,9 +3,16 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Link from '../src/link';
-
+import { Landing } from '../src/landing';
+import { SEO } from '../src/common/seo';
 
 const Home: NextPage = () => {
+  return (
+    <>
+      <SEO description="Assign is the agile project management tool of choice for developers around the world for real-time collaboration around a shared, prioritized backlog." />
+      <Landing />
+    </>
+  );
   return (
     <Container maxWidth="lg">
       <Box
@@ -23,7 +30,6 @@ const Home: NextPage = () => {
         <Link href="/dashboard" color="secondary">
           Go to the about page
         </Link>
-
       </Box>
     </Container>
   );
