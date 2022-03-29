@@ -40,6 +40,12 @@ export interface UpdateSectionData {
   title?: string | null;
 }
 
+export interface UpdateTaskData {
+  title?: string | null;
+  dueDate?: any | null;
+  description?: string | null;
+}
+
 //==============================================================
 // END Enums and Input Objects
 //==============================================================

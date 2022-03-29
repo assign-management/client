@@ -1,5 +1,6 @@
 import type { GetServerSideProps, NextPage } from 'next';
 import { Board } from '../../src/board';
+import { TaskDialog } from '../../src/board/task-dialog';
 
 interface BoardPanelProps {
   projectId: string;
@@ -7,7 +8,12 @@ interface BoardPanelProps {
 }
 
 const BoardPanel: NextPage<BoardPanelProps> = ({ projectId, taskId }) => {
-  return <>{<Board projectId={projectId} />}</>;
+  return (
+    <>
+      <Board projectId={projectId} />
+      {taskId && <TaskDialog projectId={projectId} taskId={taskId} />}
+    </>
+  );
 };
 
 // This gets called on every request
