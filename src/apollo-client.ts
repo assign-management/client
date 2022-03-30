@@ -29,9 +29,9 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
  */
 const cache = new InMemoryCache({
   typePolicies: {
-    Section: {
-      keyFields: ['id', 'projectId'],
-    },
+    // Section: {
+    //   // keyFields: ['id', 'projectId'],
+    // },
   },
 });
 

@@ -6,7 +6,7 @@ import { MdMailOutline, MdPersonOutline } from 'react-icons/md';
 import { SubmitButton } from '../../common/buttons';
 import { Label } from '../../common/label';
 import { getErrorProps } from '../../common/react-hook-form/get-error-props';
-import { Link } from '../../link';
+import { Link } from '../../common/link';
 import { EmailField } from '../common/email-field';
 import { OpenAuth } from '../common/open-auth';
 import { PasswordField } from '../common/password-field';

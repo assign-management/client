@@ -14,7 +14,7 @@ import { LoginWrapper } from './login-wrapper.styled';
 import { useLogin } from './login.hook';
 import { LoginVariables } from './__generated__/Login';
 import { ForgotPasswordWrapper } from './forgot-password-wrapper.styled';
-import { Link } from '../../link';
+import { Link } from '../../common/link';
 import { RegisterLinkWrapper } from './register-link-wrapper.styled';
 import { PasswordField } from '../common/password-field';
 import { EmailField } from '../common/email-field';

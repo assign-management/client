@@ -27,11 +27,29 @@ export const SectionRename: React.FC<SectionRenameProps> = ({ handleHide, sectio
     resolver: yupResolver(boardSectionRenameSchema),
   });
   const titleKey = 'title';
-  const { updateSection } = useUpdateSection(section.id);
+  const { updateSection } = useUpdateSection({
+    id: section.id,
+    update(cache, { data }) {
+      const section = data?.updateSection?.section;
+
+      if (section) {
+        cache.modify({
+          id: cache.identify({ id: section.id, __typename: section.__typename }),
+          fields: {
+            title() {
+              return section.title;
+            },
+          },
+        });
+      }
+    },
+  });
   const isError = !isValid;
 
   const handleFormSubmit: SubmitHandler<SectionRenameArgs> = async ({ title }) => {
-    await updateSection({ variables: { id: section.id, data: { title } } });
+    await updateSection({
+      variables: { id: section.id, data: { title } },
+    });
     handleHide();
   };
   const title = watch(titleKey);
