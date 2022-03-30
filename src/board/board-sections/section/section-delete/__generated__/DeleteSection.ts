@@ -16,11 +16,11 @@ export interface DeleteSection_deleteSection_section {
 export interface DeleteSection_deleteSection {
   __typename: "SectionMutationResponse";
   status: MutationStatus;
-  section: DeleteSection_deleteSection_section | null;
+  section: DeleteSection_deleteSection_section;
 }
 
 export interface DeleteSection {
-  deleteSection: DeleteSection_deleteSection | null;
+  deleteSection: DeleteSection_deleteSection;
 }
 
 export interface DeleteSectionVariables {

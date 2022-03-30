@@ -14,9 +14,12 @@ interface TaskPanelProps {
 }
 
 export const TaskPanel: React.FC<TaskPanelProps> = ({ task, handleClose }) => {
-  console.log('task', task);
+  const { deleteTask } = useDeleteTask(task?.id as string);
+  const handleDeleteTask = async () => {
+    await deleteTask();
+    handleClose();
+  };
 
-  const { deleteTask } = useDeleteTask(task?.id as string, handleClose);
   return (
     <TaskPanelWrapper>
       <TaskPanelHeader handleClose={handleClose} task={task} />
@@ -29,7 +32,7 @@ export const TaskPanel: React.FC<TaskPanelProps> = ({ task, handleClose }) => {
             component="nav"
             subheader={<ListSubheader id="Task Actions">Task Actions</ListSubheader>}
           >
-            <ListItem button onClick={() => deleteTask()}>
+            <ListItem button onClick={handleDeleteTask}>
               <ListItemIcon>
                 <GoX />
               </ListItemIcon>

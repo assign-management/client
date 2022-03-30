@@ -24,9 +24,9 @@ export interface FetchSections_fetchSections_sections {
   id: string;
   projectId: string;
   title: string;
-  tasks: FetchSections_fetchSections_sections_tasks[] | null;
   createdAt: any;
   updatedAt: any;
+  tasks: FetchSections_fetchSections_sections_tasks[] | null;
 }
 
 export interface FetchSections_fetchSections {

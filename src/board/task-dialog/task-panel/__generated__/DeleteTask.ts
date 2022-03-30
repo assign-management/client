@@ -9,9 +9,14 @@ import { MutationStatus } from "./../../../../../__generated__/globalTypes";
 // GraphQL mutation operation: DeleteTask
 // ====================================================
 
+export interface DeleteTask_deleteTask_task {
+  __typename: "Task";
+}
+
 export interface DeleteTask_deleteTask {
   __typename: "TaskMutationResponse";
   status: MutationStatus;
+  task: DeleteTask_deleteTask_task | null;
 }
 
 export interface DeleteTask {

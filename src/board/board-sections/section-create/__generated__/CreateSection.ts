@@ -9,24 +9,11 @@ import { CreateSectionData, MutationStatus } from "./../../../../../__generated_
 // GraphQL mutation operation: CreateSection
 // ====================================================
 
-export interface CreateSection_createSection_section_tasks {
-  __typename: "Task";
-  id: string;
-  title: string;
-  order: number | null;
-  dueDate: any | null;
-  description: string | null;
-  sectionId: string;
-  createdAt: any;
-  updatedAt: any;
-}
-
 export interface CreateSection_createSection_section {
   __typename: "Section";
   id: string;
   projectId: string;
   title: string;
-  tasks: CreateSection_createSection_section_tasks[] | null;
   createdAt: any;
   updatedAt: any;
 }
@@ -34,7 +21,7 @@ export interface CreateSection_createSection_section {
 export interface CreateSection_createSection {
   __typename: "SectionMutationResponse";
   status: MutationStatus;
-  section: CreateSection_createSection_section | null;
+  section: CreateSection_createSection_section;
 }
 
 export interface CreateSection {
