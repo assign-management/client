@@ -25,7 +25,23 @@ export const TaskRename: React.FC<TaskRenameProps> = ({ handleHide, task }) => {
     resolver: yupResolver(taskRenameSchema),
   });
   const titleKey = 'title';
-  const { updateTask } = useUpdateTask(task.id);
+  const { updateTask } = useUpdateTask({
+    update(cache, { data }) {
+      const task = data?.updateTask?.task;
+
+      if (task) {
+        const { id, __typename, title } = task;
+        cache.modify({
+          id: cache.identify({ id, __typename }),
+          fields: {
+            title() {
+              return title;
+            },
+          },
+        });
+      }
+    },
+  });
   const isError = !isValid;
 
   const handleFormSubmit: SubmitHandler<TaskRenameArgs> = async ({ title }) => {

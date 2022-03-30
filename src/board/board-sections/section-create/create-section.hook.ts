@@ -4,7 +4,8 @@ import { CreateSection, CreateSectionVariables } from './__generated__/CreateSec
 
 export const useCreateSection = () => {
   const [createSection, { loading }] = useMutation<CreateSection, CreateSectionVariables>(
-    CREATE_SECTION
+    CREATE_SECTION,
+    { refetchQueries: ['FetchSections'] }
   );
   return { createSection, loading };
 };

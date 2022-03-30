@@ -33,11 +33,12 @@ export const SectionRename: React.FC<SectionRenameProps> = ({ handleHide, sectio
       const section = data?.updateSection?.section;
 
       if (section) {
+        const { id, __typename, title } = section;
         cache.modify({
-          id: cache.identify({ id: section.id, __typename: section.__typename }),
+          id: cache.identify({ id, __typename }),
           fields: {
             title() {
-              return section.title;
+              return title;
             },
           },
         });

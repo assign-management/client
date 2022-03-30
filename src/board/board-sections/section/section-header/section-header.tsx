@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { SectionRename } from '../../section-rename';
-import { SectionFields } from '../../__generated__/SectionFields';
+import { FetchSections_fetchSections_sections } from '../../__generated__/FetchSections';
 import { SectionMenu } from '../section-menu';
 import { SectionHeaderTitle } from './section-header-title.styled';
 import { SectionHeaderWrapper } from './section-header-wrapper.styled';
 
 interface SectionHeaderProps {
-  section: SectionFields;
+  section: FetchSections_fetchSections_sections;
 }
 
 export const SectionHeader: React.FC<SectionHeaderProps> = ({ section }) => {

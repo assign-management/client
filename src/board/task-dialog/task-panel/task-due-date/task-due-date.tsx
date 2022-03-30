@@ -38,7 +38,23 @@ interface UpdateDueDateVariables {
 const name = 'dueDate';
 
 export const TaskDueDate: React.FC<TaskDueDateProps> = ({ task }) => {
-  const { updateTask } = useUpdateTask(task.id);
+  const { updateTask } = useUpdateTask({
+    update(cache, { data }) {
+      const task = data?.updateTask?.task;
+
+      if (task) {
+        const { id, __typename, dueDate } = task;
+        cache.modify({
+          id: cache.identify({ id, __typename }),
+          fields: {
+            dueDate() {
+              return dueDate;
+            },
+          },
+        });
+      }
+    },
+  });
   const formRef = useRef<HTMLFormElement>(null);
 
   const handleDueDateSubmit: SubmitHandler<UpdateDueDateVariables> = async ({ dueDate }) => {

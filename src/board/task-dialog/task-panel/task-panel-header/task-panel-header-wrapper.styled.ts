@@ -4,7 +4,7 @@ export const TaskPanelHeaderWrapper = styled(DialogTitle)`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  :first-child {
+  :first-of-type {
     flex: 1;
   }
 `;

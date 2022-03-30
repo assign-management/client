@@ -14,7 +14,6 @@ export const TaskDialog: React.FC<TaskDialogProps> = ({ projectId, taskId }) => 
   const router = useRouter();
   const handleClose = () => router.push(`/board/${projectId}`);
   const { task, loading } = useFetchTask(taskId);
-  console.log('task', task);
 
   return (
     <Dialog open={true} fullWidth maxWidth="md" onClose={handleClose}>
