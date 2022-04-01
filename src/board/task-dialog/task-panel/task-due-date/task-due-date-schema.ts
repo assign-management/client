@@ -1,19 +1,5 @@
 import * as Yup from 'yup';
-
-const getMinDate = () => {
-  const date = new Date();
-  date.setFullYear(date.getFullYear() - 40);
-  return date;
-};
-
-const getMaxDate = () => {
-  const date = new Date();
-  date.setFullYear(date.getFullYear() + 40);
-  return date;
-};
-
-export const MIN_DATE = getMinDate();
-export const MAX_DATE = getMaxDate();
+import { MAX_DATE, MIN_DATE } from './task-due-date.const';
 
 const isDateValid = (value: string | null | undefined) => {
   return typeof value === 'string' && !Number.isNaN(Date.parse(value));

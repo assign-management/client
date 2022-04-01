@@ -19,7 +19,7 @@ export const TaskPanelHeader: React.FC<TaskPanelHeaderProps> = ({ handleClose, t
       {showForm ? (
         <TaskRename handleHide={() => setShowForm(false)} task={task} />
       ) : (
-        <TaskPanelHeaderTitle onClick={() => setShowForm(true)}>{task.title}</TaskPanelHeaderTitle>
+        <TaskPanelHeaderTitle onClick={() => setShowForm(true)}>{task?.title}</TaskPanelHeaderTitle>
       )}
       <TaskPanelHeaderCloseButton icon={GoX} size="medium" onClick={handleClose} />
     </TaskPanelHeaderWrapper>

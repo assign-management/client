@@ -17,11 +17,7 @@ export const TaskDialog: React.FC<TaskDialogProps> = ({ projectId, taskId }) => 
 
   return (
     <Dialog open={true} fullWidth maxWidth="md" onClose={handleClose}>
-      {loading ? (
-        <div>loading</div>
-      ) : (
-        <TaskPanel task={task as FetchTask_fetchTask} handleClose={handleClose} />
-      )}
+      {loading || !task ? <div>loading</div> : <TaskPanel task={task} handleClose={handleClose} />}
     </Dialog>
   );
 };

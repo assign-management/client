@@ -20,7 +20,7 @@ export interface FetchTask_fetchTask {
 }
 
 export interface FetchTask {
-  fetchTask: FetchTask_fetchTask;
+  fetchTask: FetchTask_fetchTask | null;
 }
 
 export interface FetchTaskVariables {
