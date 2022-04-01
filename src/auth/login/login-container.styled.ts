@@ -1,6 +1,6 @@
 import { Container, styled } from '@mui/material';
 
 export const LoginContainer = styled(Container)`
-  padding: 2rem 4rem;
+  padding: 0rem 2rem 2rem;
   border-radius: 0.5rem;
 `;

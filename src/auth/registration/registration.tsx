@@ -82,6 +82,7 @@ export const Registration: React.FC = () => {
           <Link href="/register">Terms of Use</Link>
         </RegistrationCondition>
         <LoginLinkWrapper>
+          already on assign?
           <Link href="/login">sign in</Link>
         </LoginLinkWrapper>
       </RegistrationContainer>

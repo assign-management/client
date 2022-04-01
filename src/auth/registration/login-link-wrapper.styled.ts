@@ -8,6 +8,6 @@ export const LoginLinkWrapper = styled('p')`
   margin-top: 1.5rem;
 
   a {
-    text-decoration: none;
+    padding: 0.5rem;
   }
 `;

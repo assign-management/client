@@ -7,6 +7,6 @@ export const RegisterLinkWrapper = styled('p')`
   text-transform: capitalize;
 
   a {
-    text-decoration: none;
+    padding: 0.5rem;
   }
 `;
