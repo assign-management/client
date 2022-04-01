@@ -14,9 +14,9 @@ interface UseUpdateTaskArguments {
 }
 
 export const useUpdateTask = ({ update }: UseUpdateTaskArguments) => {
-  const [updateTask] = useMutation<UpdateTask, UpdateTaskVariables>(UPDATE_TASK, {
+  const [updateTask, { loading }] = useMutation<UpdateTask, UpdateTaskVariables>(UPDATE_TASK, {
     update,
   });
 
-  return { updateTask };
+  return { updateTask, loading };
 };

@@ -26,7 +26,7 @@ export const TaskDescription: React.FC<TaskDescriptionProps> = ({ task }) => {
     mode: 'all',
   });
 
-  const { updateTask } = useUpdateTask({ update });
+  const { updateTask, loading } = useUpdateTask({ update });
 
   const handleDueDateSubmit: SubmitHandler<UpdateDescriptionFieldValues> = async ({
     description,
@@ -38,7 +38,7 @@ export const TaskDescription: React.FC<TaskDescriptionProps> = ({ task }) => {
     <TaskFieldForm ref={formRef} onSubmit={handleSubmit(handleDueDateSubmit)}>
       <TaskFieldLabel label={name} icon={GrDocumentText} name={name} />
       <TaskInputWrapper>
-        {showInput ? (
+        {showInput || loading ? (
           <TaskDescriptionField
             control={control}
             handleBlur={handleBlur}

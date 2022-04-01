@@ -1,9 +1,6 @@
-import { DateTimePicker, LocalizationProvider } from '@mui/lab';
-import DateAdapter from '@mui/lab/AdapterDateFns';
 import { Control, Controller } from 'react-hook-form';
-import { TextareaAutosize, TextField, useTheme } from '@mui/material';
+import { TextField } from '@mui/material';
 import React from 'react';
-import { getErrorProps } from '../../../../common/react-hook-form/get-error-props';
 import { UpdateDescriptionFieldValues } from './update-description-field-values.interface';
 
 interface DateTimeFieldProps {
@@ -19,13 +16,11 @@ export const TaskDescriptionField: React.FC<DateTimeFieldProps> = ({
   name,
   placeholder,
 }) => {
-  const theme = useTheme();
   return (
     <Controller
       name={name as any}
       control={control}
-      render={({ field, fieldState }) => {
-        const errorProps = getErrorProps(fieldState);
+      render={({ field }) => {
         return (
           <TextField
             size="small"

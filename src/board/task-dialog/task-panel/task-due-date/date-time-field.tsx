@@ -41,7 +41,6 @@ export const DateTimeField: React.FC<DateTimeFieldProps> = ({ control, handleBlu
                     {...errorProps}
                     onBlur={handleBlur}
                     id={name}
-                    fullWidth
                     hidden={true}
                     variant="outlined"
                     size="medium"
