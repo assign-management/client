@@ -27,24 +27,7 @@ export const SectionRename: React.FC<SectionRenameProps> = ({ handleHide, sectio
     resolver: yupResolver(boardSectionRenameSchema),
   });
   const titleKey = 'title';
-  const { updateSection } = useUpdateSection({
-    id: section.id,
-    update(cache, { data }) {
-      const section = data?.updateSection?.section;
-
-      if (section) {
-        const { id, __typename, title } = section;
-        cache.modify({
-          id: cache.identify({ id, __typename }),
-          fields: {
-            title() {
-              return title;
-            },
-          },
-        });
-      }
-    },
-  });
+  const { updateSection } = useUpdateSection();
   const isError = !isValid;
 
   const handleFormSubmit: SubmitHandler<SectionRenameArgs> = async ({ title }) => {

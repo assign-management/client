@@ -8,7 +8,6 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { taskDueDateSchema } from './task-due-date-schema';
 import { DateTimeField } from './date-time-field';
 import { UpdateDueDateFieldValues } from './update-due-date-field-values.interface';
-import { update } from './task-due-date.utils';
 
 interface TaskDueDateProps {
   task: FetchTask_fetchTask;
@@ -17,7 +16,7 @@ interface TaskDueDateProps {
 const name = 'dueDate';
 
 export const TaskDueDate: React.FC<TaskDueDateProps> = ({ task }) => {
-  const { updateTask } = useUpdateTask({ update });
+  const { updateTask } = useUpdateTask();
   const { formRef, handleBlur } = useSubmitFormOnBlur();
 
   const handleDueDateSubmit: SubmitHandler<UpdateDueDateFieldValues> = async ({ dueDate }) => {

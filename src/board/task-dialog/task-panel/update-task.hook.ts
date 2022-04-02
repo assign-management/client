@@ -9,14 +9,8 @@ export type UpdateTaskCacheHandler = MutationUpdaterFunction<
   ApolloCache<any>
 >;
 
-interface UseUpdateTaskArguments {
-  update: UpdateTaskCacheHandler;
-}
-
-export const useUpdateTask = ({ update }: UseUpdateTaskArguments) => {
-  const [updateTask, { loading }] = useMutation<UpdateTask, UpdateTaskVariables>(UPDATE_TASK, {
-    update,
-  });
+export const useUpdateTask = () => {
+  const [updateTask, { loading }] = useMutation<UpdateTask, UpdateTaskVariables>(UPDATE_TASK);
 
   return { updateTask, loading };
 };

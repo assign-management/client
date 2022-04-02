@@ -7,7 +7,6 @@ import { useUpdateTask } from '../update-task.hook';
 import { FetchTask_fetchTask } from '../../__generated__/FetchTask';
 import { TaskDescriptionField } from './task-description-field';
 import { UpdateDescriptionFieldValues } from './update-description-field-values.interface';
-import { update } from './task-description.utils';
 import { TaskDescriptionText } from './task-description-text.styled';
 
 interface TaskDescriptionProps {
@@ -22,11 +21,11 @@ export const TaskDescription: React.FC<TaskDescriptionProps> = ({ task }) => {
   const showInputHandler = () => setShowInput((prevValue) => !prevValue);
   const { formRef, handleBlur } = useSubmitFormOnBlur(showInputHandler);
   const { control, handleSubmit } = useForm<UpdateDescriptionFieldValues>({
-    defaultValues: { description: task.description },
+    defaultValues: { description: task?.description ?? '' },
     mode: 'all',
   });
 
-  const { updateTask, loading } = useUpdateTask({ update });
+  const { updateTask, loading } = useUpdateTask();
 
   const handleDueDateSubmit: SubmitHandler<UpdateDescriptionFieldValues> = async ({
     description,
