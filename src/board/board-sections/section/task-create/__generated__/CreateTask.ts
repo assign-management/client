@@ -24,11 +24,11 @@ export interface CreateTask_createTask_task {
 export interface CreateTask_createTask {
   __typename: "TaskMutationResponse";
   status: MutationStatus;
-  task: CreateTask_createTask_task | null;
+  task: CreateTask_createTask_task;
 }
 
 export interface CreateTask {
-  createTask: CreateTask_createTask | null;
+  createTask: CreateTask_createTask;
 }
 
 export interface CreateTaskVariables {

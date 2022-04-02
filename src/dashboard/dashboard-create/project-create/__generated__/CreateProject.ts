@@ -26,11 +26,11 @@ export interface CreateProject_createProject_project {
 export interface CreateProject_createProject {
   __typename: "ProjectMutationResponse";
   status: MutationStatus;
-  project: CreateProject_createProject_project | null;
+  project: CreateProject_createProject_project;
 }
 
 export interface CreateProject {
-  createProject: CreateProject_createProject | null;
+  createProject: CreateProject_createProject;
 }
 
 export interface CreateProjectVariables {

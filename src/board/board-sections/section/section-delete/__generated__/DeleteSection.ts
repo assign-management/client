@@ -11,6 +11,7 @@ import { MutationStatus } from "./../../../../../../__generated__/globalTypes";
 
 export interface DeleteSection_deleteSection_section {
   __typename: "Section";
+  id: string;
 }
 
 export interface DeleteSection_deleteSection {

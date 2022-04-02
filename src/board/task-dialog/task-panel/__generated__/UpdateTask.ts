@@ -24,11 +24,11 @@ export interface UpdateTask_updateTask_task {
 export interface UpdateTask_updateTask {
   __typename: "TaskMutationResponse";
   status: MutationStatus;
-  task: UpdateTask_updateTask_task | null;
+  task: UpdateTask_updateTask_task;
 }
 
 export interface UpdateTask {
-  updateTask: UpdateTask_updateTask | null;
+  updateTask: UpdateTask_updateTask;
 }
 
 export interface UpdateTaskVariables {

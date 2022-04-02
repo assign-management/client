@@ -5,10 +5,12 @@ import { DeleteSection, DeleteSectionVariables } from './__generated__/DeleteSec
 export const useDeleteSection = (id: string) => {
   const [deleteSection] = useMutation<DeleteSection, DeleteSectionVariables>(DELETE_SECTION, {
     variables: { id },
-    update(cache, { data }) {
-      const __typename = data?.deleteSection.section.__typename;
-      if (__typename) cache.evict({ id: cache.identify({ __typename, id }) });
-      cache.gc();
+    async update(cache, { data }) {
+      if (data) {
+        const { id, __typename } = data.deleteSection.section;
+        cache.evict({ id: cache.identify({ id, __typename }) });
+        cache.gc();
+      }
     },
   });
 

@@ -11,9 +11,11 @@ export const useDeleteTask = ({ id, onCompleted }: UserDeleteTaskArguments) => {
   const [deleteTask] = useMutation<DeleteTask, DeleteTaskVariables>(DELETE_TASK, {
     variables: { id },
     async update(cache, { data }) {
-      const __typename = data?.deleteTask?.task?.__typename;
-      if (__typename) cache.evict({ id: cache.identify({ __typename, id }) });
-      cache.gc();
+      if (data) {
+        const { id, __typename } = data.deleteTask.task;
+        cache.evict({ id: cache.identify({ id, __typename }) });
+        cache.gc();
+      }
     },
     onCompleted,
   });

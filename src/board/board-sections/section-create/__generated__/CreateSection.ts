@@ -25,7 +25,7 @@ export interface CreateSection_createSection {
 }
 
 export interface CreateSection {
-  createSection: CreateSection_createSection | null;
+  createSection: CreateSection_createSection;
 }
 
 export interface CreateSectionVariables {

@@ -5,7 +5,7 @@ export const DELETE_TASK = gql`
     deleteTask(id: $id) {
       status
       task {
-        __typename
+        id
       }
     }
   }

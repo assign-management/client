@@ -25,7 +25,7 @@ export interface UpdateSection_updateSection {
 }
 
 export interface UpdateSection {
-  updateSection: UpdateSection_updateSection | null;
+  updateSection: UpdateSection_updateSection;
 }
 
 export interface UpdateSectionVariables {
