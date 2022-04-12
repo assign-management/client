@@ -1,13 +1,23 @@
-import { NetworkStatus, useQuery } from '@apollo/client';
+import { NetworkStatus, useQuery, useReactiveVar } from '@apollo/client';
+import { searchVar } from '../../apollo';
 import { FETCH_PROJECTS } from './fetch-projects.gql';
-import { FetchProjects } from './__generated__/FetchProjects';
+import { FetchProjects, FetchProjectsVariables } from './__generated__/FetchProjects';
 
 export const useFetchProjects = (offset?: number, limit?: number) => {
-  const { loading, error, data, networkStatus } = useQuery<FetchProjects>(FETCH_PROJECTS, {
-    variables: { args: { offset, limit } },
-    notifyOnNetworkStatusChange: true,
-    // pollInterval: 2000,
-  });
+  const search = useReactiveVar(searchVar);
+
+  const args = search
+    ? { offset, limit, filter: [{ field: 'title', value: search }] }
+    : { offset, limit };
+
+  const { loading, error, data, networkStatus } = useQuery<FetchProjects, FetchProjectsVariables>(
+    FETCH_PROJECTS,
+    {
+      variables: { args },
+      notifyOnNetworkStatusChange: true,
+      // pollInterval: 2000,
+    }
+  );
 
   const isLoading = networkStatus === NetworkStatus.loading;
 

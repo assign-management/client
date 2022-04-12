@@ -31,9 +31,15 @@ export interface CreateTaskData {
   sectionId: string;
 }
 
+export interface FilterArgs {
+  field: string;
+  value: string;
+}
+
 export interface PaginationArgs {
   offset?: number | null;
   limit?: number | null;
+  filter?: FilterArgs[] | null;
 }
 
 export interface UpdateSectionData {

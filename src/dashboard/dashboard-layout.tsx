@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { DashboardContent } from './dashboard-content.styled';
 import { DashboardHeader } from './dashboard-header';
 import { DashboardWrapper } from './dashboard-wrapper.styled';
 
 export const DashboardLayout: React.FC = ({ children }) => {
-  const [term, setTerm] = useState('');
-
   return (
     <DashboardWrapper>
-      <DashboardHeader value={term} onChange={setTerm} />
+      <DashboardHeader />
       <DashboardContent>{children}</DashboardContent>
     </DashboardWrapper>
   );
