@@ -1,20 +1,18 @@
 import React from 'react';
+import { BASE_URL } from '../../../common/config';
 import { OpenAuthGithubButton } from './open-auth-github-button.styled';
 import { OpenAuthGoogleButton } from './open-auth-google-button.styled';
 
-type OpenAuthDomain = 'github' | 'google';
-
-const handleOpenAuth = (domain: OpenAuthDomain) => () => {
-  window.open(`http://localhost:4000/auth/${domain}`, '_self');
-};
+const handleGoogleOpenAuth = () => window.open(`${BASE_URL}/auth/google`, '_self');
+const handleGithubOpenAuth = () => window.open(`${BASE_URL}/auth/github`, '_self');
 
 export const OpenAuth: React.FC = () => {
   return (
     <>
-      <OpenAuthGithubButton onClick={handleOpenAuth('github')}>
+      <OpenAuthGithubButton onClick={handleGithubOpenAuth}>
         continue with github
       </OpenAuthGithubButton>
-      <OpenAuthGoogleButton onClick={handleOpenAuth('google')}>
+      <OpenAuthGoogleButton onClick={handleGoogleOpenAuth}>
         continue with google
       </OpenAuthGoogleButton>
     </>

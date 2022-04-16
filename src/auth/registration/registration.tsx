@@ -20,13 +20,7 @@ import { registrationSchema } from './registration-schema';
 import { RegistrationSignature } from './registration-signature.styled';
 import { RegistrationWrapper } from './registration-wrapper.styled';
 import { useRegistration } from './registration.hook';
-import { RegistrationVariables } from './__generated__/Registration';
-
-interface RegistrationValues {
-  name: string;
-  email: string;
-  password: string;
-}
+import { RegistrationValues } from './registration.values';
 
 export const Registration: React.FC = () => {
   const { loading, register } = useRegistration();
@@ -76,9 +70,9 @@ export const Registration: React.FC = () => {
               );
             }}
           />
-
-          <EmailField control={control} />
-          <PasswordField control={control} />
+          {/* TODO:fix the type */}
+          <EmailField control={control as any} />
+          <PasswordField control={control as any} />
           <SubmitButton fullWidth text="Agree 	&amp; Join" inProgress={loading} />
         </form>
         <RegistrationCondition>

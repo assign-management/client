@@ -16,6 +16,7 @@ export const UserOptions: React.FC = () => {
       <UserOptionsButton
         onClick={openDropdown}
         letter={loading ? '' : formatUserInfo(data?.profile).letter}
+        src={data?.profile?.image ?? ''}
       />
       <UserOptionsMenu
         id="simple-menu"

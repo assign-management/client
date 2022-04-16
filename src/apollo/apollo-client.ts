@@ -4,6 +4,7 @@ import { onError } from '@apollo/client/link/error';
 import { concatPagination } from '@apollo/client/utilities';
 import merge from 'deepmerge';
 import isEqual from 'lodash/isEqual';
+import { BASE_URL } from '../common/config';
 
 export const APOLLO_STATE_PROP_NAME = '__APOLLO_STATE__';
 type Client = ApolloClient<NormalizedCacheObject>;
@@ -11,7 +12,7 @@ type Client = ApolloClient<NormalizedCacheObject>;
 let apolloClient: Client;
 
 const httpLink = new HttpLink({
-  uri: 'http://localhost:4000/graphql', // Server URL (must be absolute)
+  uri: `${BASE_URL}/graphql`, // Server URL (must be absolute)
   credentials: 'include',
 
   // credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`

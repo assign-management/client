@@ -12,6 +12,7 @@ export interface Profile_profile {
   id: string;
   email: string;
   name: string;
+  image: string | null;
 }
 
 export interface Profile {

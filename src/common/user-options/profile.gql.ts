@@ -6,6 +6,7 @@ export const PROFILE = gql`
       id
       email
       name
+      image
     }
   }
 `;
