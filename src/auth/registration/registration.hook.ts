@@ -3,15 +3,18 @@ import { useRouter } from 'next/router';
 import { useContext } from 'react';
 import { AlertContext, alertDisplayFailure } from '../../alert';
 import { REGISTRATION } from './registration.gql';
+import { Registration, RegistrationVariables } from './__generated__/Registration';
 
 export const useRegistration = () => {
   const router = useRouter();
   const { dispatch } = useContext(AlertContext);
 
-  const [register, { loading }] = useMutation(REGISTRATION, {
+  const [register, { loading }] = useMutation<Registration, RegistrationVariables>(REGISTRATION, {
     onCompleted(data) {
-      localStorage.setItem('token', data.login?.token ?? '');
-      router.push('dashboard');
+      console.log(data);
+
+      // localStorage.setItem('token', data.login?.token ?? '');
+      // router.push('dashboard');
     },
     onError(err) {
       if (err.message === 'Failed to fetch') {

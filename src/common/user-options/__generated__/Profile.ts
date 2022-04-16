@@ -12,7 +12,6 @@ export interface Profile_profile {
   id: string;
   email: string;
   name: string;
-  token: string | null;
 }
 
 export interface Profile {

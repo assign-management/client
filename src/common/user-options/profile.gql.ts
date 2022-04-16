@@ -6,7 +6,6 @@ export const PROFILE = gql`
       id
       email
       name
-      token
     }
   }
 `;

@@ -31,9 +31,20 @@ export interface CreateTaskData {
   sectionId: string;
 }
 
+export interface CreateUserData {
+  email: string;
+  password: string;
+  name?: string | null;
+}
+
 export interface FilterArgs {
   field: string;
   value: string;
+}
+
+export interface LoginData {
+  email: string;
+  password: string;
 }
 
 export interface PaginationArgs {

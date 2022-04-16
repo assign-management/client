@@ -22,9 +22,15 @@ import { RegistrationWrapper } from './registration-wrapper.styled';
 import { useRegistration } from './registration.hook';
 import { RegistrationVariables } from './__generated__/Registration';
 
+interface RegistrationValues {
+  name: string;
+  email: string;
+  password: string;
+}
+
 export const Registration: React.FC = () => {
   const { loading, register } = useRegistration();
-  const { handleSubmit, control } = useForm<RegistrationVariables>({
+  const { handleSubmit, control } = useForm<RegistrationValues>({
     mode: 'all',
     resolver: yupResolver(registrationSchema),
     defaultValues: {
@@ -33,8 +39,8 @@ export const Registration: React.FC = () => {
     },
   });
 
-  const handleFormSubmit: SubmitHandler<RegistrationVariables> = (variables) => {
-    register({ variables });
+  const handleFormSubmit: SubmitHandler<RegistrationValues> = (data) => {
+    register({ variables: { data } });
   };
   return (
     <RegistrationWrapper>
