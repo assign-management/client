@@ -10,18 +10,32 @@ export const useFetchProjects = (offset?: number, limit?: number) => {
     ? { offset, limit, filter: [{ field: 'title', value: search }] }
     : { offset, limit };
 
-  const { loading, error, data, networkStatus } = useQuery<FetchProjects, FetchProjectsVariables>(
-    FETCH_PROJECTS,
-    {
-      variables: { args },
-      notifyOnNetworkStatusChange: true,
-      // pollInterval: 2000,
-    }
-  );
+  const { loading, error, data, networkStatus, fetchMore } = useQuery<
+    FetchProjects,
+    FetchProjectsVariables
+  >(FETCH_PROJECTS, {
+    variables: { args },
+    notifyOnNetworkStatusChange: true,
+    // pollInterval: 2000,
+  });
 
-  const isLoading = networkStatus === NetworkStatus.loading;
-
+  const isLoading =
+    networkStatus === NetworkStatus.loading ||
+    networkStatus === NetworkStatus.setVariables ||
+    networkStatus === NetworkStatus.poll;
+  const isFetchingMore = networkStatus === NetworkStatus.fetchMore;
   const isRefetching = networkStatus === NetworkStatus.refetch;
 
-  return { loading: isLoading, isRefetching, error, projects: data?.fetchProjects?.projects };
+  const handleFetchMore = () =>
+    fetchMore({ variables: { args: { ...args, offset: data?.fetchProjects?.projects?.length } } });
+
+  return {
+    loading: isLoading,
+    isFetchingMore,
+    isRefetching,
+    error,
+    projects: data?.fetchProjects?.projects,
+    total: data?.fetchProjects?.total,
+    handleFetchMore,
+  };
 };

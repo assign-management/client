@@ -9,6 +9,15 @@ export const useDeleteProject = (id: string) => {
       fetchPolicy: 'no-cache',
       variables: { id },
       update(cache, { data }) {
+        cache.modify({
+          fields: {
+            fetchProjects(existingFetchProjects = {}) {
+              const { total = 0 } = existingFetchProjects;
+              console.log(total ? total : total - 1);
+              return { ...existingFetchProjects, total: total ? total - 1 : total };
+            },
+          },
+        });
         /**
          * ApolloLink does not stop on unmounting a React Component or unsubscribing to a "watchQuery" subscription.
          * @link https://github.com/apollographql/apollo-client/issues/7101
