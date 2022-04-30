@@ -26,8 +26,14 @@ export const useFetchProjects = (offset?: number, limit?: number) => {
   const isFetchingMore = networkStatus === NetworkStatus.fetchMore;
   const isRefetching = networkStatus === NetworkStatus.refetch;
 
+  const hasMore =
+    Boolean(data?.fetchProjects?.total) &&
+    data?.fetchProjects?.total !== data?.fetchProjects?.projects?.length;
+
   const handleFetchMore = () =>
-    fetchMore({ variables: { args: { ...args, offset: data?.fetchProjects?.projects?.length } } });
+    fetchMore({
+      variables: { args: { ...args, offset: data?.fetchProjects?.projects?.length ?? 0 } },
+    });
 
   return {
     loading: isLoading,
@@ -35,7 +41,8 @@ export const useFetchProjects = (offset?: number, limit?: number) => {
     isRefetching,
     error,
     projects: data?.fetchProjects?.projects,
-    total: data?.fetchProjects?.total,
     handleFetchMore,
+    searchValue: search,
+    hasMore,
   };
 };
